@@ -7,8 +7,8 @@
             c.email,
             c.country,
             c.city,
-            min(o.order_approval_date) as first_order_date,
-            max(o.order_approval_date) as most_recent_order_date,
+            min(o.order_approved_at) as first_order_date,
+            max(o.order_approved_at) as most_recent_order_date,
             count(o.order_id) as total_orders
         from orders o
         inner join customers c on o.customer_id = c.customer_id

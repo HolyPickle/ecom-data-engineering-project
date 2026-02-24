@@ -4,4 +4,4 @@ select
     gender,
     city,
     country
-from {{ source('raw', 'customers') }}
+from {{ source('raw_data', 'customers') }}

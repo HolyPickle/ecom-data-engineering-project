@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: big-star-project-487814
+    schema: raw_data
+    freshness:
+      warn_after: 
+        count: 24
+        period: hour
+    tables:
+      - name: customers
+      - name: orders
+      - name: products
+      - name: order_items

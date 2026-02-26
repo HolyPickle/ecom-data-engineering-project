@@ -2,18 +2,23 @@ version: 2
 
 models:
   - name: stg_customers
+    description: "Staging model for customers data from the raw_data source"
     columns:
       - name: customer_id
+        description: "Unique identifier for each customer"
         tests:
           - not_null
           - unique
   - name: stg_orders
+    description: "Staging model for orders data from the raw_data source"
     columns:
       - name: order_id
+        description: "Unique identifier for each order"
         tests:
           - not_null
           - unique
       - name: order_status
+        description: "Current status of the order one of created, shipped, approved, delivered, canceled, invoiced, processing, unavailable. Updates as the order moves through the fulfillment process."
         tests:
           - accepted_values:
               values:
@@ -26,6 +31,7 @@ models:
                 - processing
                 - unavailable
       - name: customer_id
+        description: "Identifier for the customer who placed the order. Links to stg_customers.customer_id"
         tests:
           - not_null
           - relationships:

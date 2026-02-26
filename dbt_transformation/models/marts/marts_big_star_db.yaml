@@ -2,17 +2,22 @@ version: 2
 
 models:
   - name: dim_customers
+    description: "Dimension table for customers"
     columns:
       - name: customer_id
+        description: "Unique identifier for each customer"
         tests:
           - not_null
           - unique
       - name: email
+        description: "Email address of the customer"
         tests:
           - not_null
       - name: city
+        description: "City where the customer resides"
         tests:
           - not_null
       - name: country
+        description: "Country where the customer resides"
         tests:
           - not_null
